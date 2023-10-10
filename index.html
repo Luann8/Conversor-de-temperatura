@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Temperatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://png.pngtree.com/back_origin_pic/03/75/83/c18af9b7ae0447d8526b7c23327bd0c9.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+        
+        
+        h1 {
+            color: #ffffff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(11, 0, 56);
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .input-section {
+            margin: 20px 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        .buttons-section {
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .resultado {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <img src="https://th.bing.com/th/id/OIG.cQlv7MTjfBd6CDLKdDjc?pid=ImgGn" width="128" height="128" alt="logo">
+        <h1>Conversor de Temperatura</h1>
+        <h1>Celsius / fahrenheit</h1>
+
+    <div class="input-section">
+        <label for="temperatura">Temperatura:</label>
+        <input type="number" id="temperatura" placeholder="Digite a temperatura">
+    </div>
+
+    <div class="buttons-section">
+        <button id="converterCelsius">Converter para Celsius</button>
+        <button id="converterFahrenheit">Converter para Fahrenheit</button>
+    </div>
+
+    <div class="resultado">
+
+    </div>
+</div>
+
+    <script>
+        const temperaturaInput = document.getElementById('temperatura');
+        const converterCelsiusButton = document.getElementById('converterCelsius');
+        const converterFahrenheitButton = document.getElementById('converterFahrenheit');
+        const resultadoDiv = document.querySelector('.resultado');
+
+        converterCelsiusButton.addEventListener('click', () => {
+            const temperatura = parseFloat(temperaturaInput.value);
+            const celsius = (temperatura - 32) * (5/9);
+            resultadoDiv.textContent = `Em Celsius: ${celsius.toFixed(2)}°C`;
+        });
+
+        converterFahrenheitButton.addEventListener('click', () => {
+            const temperatura = parseFloat(temperaturaInput.value);
+            const fahrenheit = (temperatura * 9/5) + 32;
+            resultadoDiv.textContent = `Em Fahrenheit: ${fahrenheit.toFixed(2)}°F`;
+        });
+    </script>
+</body>
+</html>
